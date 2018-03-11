@@ -34,7 +34,7 @@ function count_file
         if [ -d "$f" ];
         then
             let dir_counter++ #count directories
-            echo >> ${file#"$(dirname $HOME)"} #output a new line
+            echo >> $file #output a new line
             count_file "$f" #recursively call this function
         else
             let file_counter++ #count files
