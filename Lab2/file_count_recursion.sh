@@ -36,7 +36,8 @@ function count_file
             let dir_counter++ #count directories
             echo >> $file #output a new line
             count_file "$f" #recursively call this function
-        else
+        elif [ -f "$f" ];
+        then
             let file_counter++ #count files
         fi
     done

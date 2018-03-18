@@ -37,7 +37,8 @@ function count_file
             then
                 let dir_counter++
                 dir_queue+=("$f")
-            else
+            elif [ -f "$f"];
+            then
                 let file_counter++
                 echo ${f#"$(dirname $HOME)"} >> $file
             fi
